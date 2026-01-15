@@ -6,12 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
-	
-	protected WebDriver driver ;
-	protected static Logger log = LogManager. getLogger();
+
+	protected WebDriver driver;
+	protected static Logger log = LogManager.getLogger();
 	
 	public BasePage(WebDriver driver) {
-	this.driver= driver; 
-	PageFactory.initElements(driver, this);
-}
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
 }

@@ -21,12 +21,14 @@ public class LoginPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//input[@id='Password']")
 	private static WebElement passwordField;
 
-	@FindBy(how = How.XPATH, using = "//input[@value='Log in']")
+	@FindBy(how = How.CSS, using = "input[value='Log in']")
 	private static WebElement loginButton;
 
 	@FindBy(how = How.XPATH, using = "//a[normalize-space()='ziedhannachi0@gmail.com']")
 	private static WebElement homePage;
 
+	@FindBy(how = How.CSS, using = "div[class='validation-summary-errors'] span")
+	private static WebElement errorMessage;
 
 	public LoginPage() {
 		super(Setup.getDriver());
@@ -50,6 +52,10 @@ public class LoginPage extends BasePage {
 
 	public static WebElement getHomePage() {
 		return homePage;
+	}
+	
+	public static WebElement getErrorMessage() {
+		return errorMessage;
 	}
 
 

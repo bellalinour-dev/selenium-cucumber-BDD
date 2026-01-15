@@ -3,8 +3,10 @@ package com.e2eTest.automation.step_definitions;
 import org.junit.jupiter.api.Assertions;
 
 import com.e2eTest.automation.page_objects.LoginPage;
+import com.e2eTest.automation.utils.ActionsUtils;
 import com.e2eTest.automation.utils.ConfigFileReader;
 import com.e2eTest.automation.utils.Setup;
+import com.e2eTest.automation.utils.Validations;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,17 +16,19 @@ public class LoginSteps {
 
 	LoginPage loginPage = new LoginPage();
 	ConfigFileReader  configFileReader = new ConfigFileReader();
+	ActionsUtils actionsUtils = new ActionsUtils();
+	Validations validations = new Validations();
 
 	@Given("Je me connecte sur le site Web Demo Shop")
 	public void jeMeConnecteSurLeSiteWebDemoShop() {
 		Setup.getDriver().get(configFileReader.getProperty("home.url"));
 	}
 
-	@When("Je clique sur le bouton log in")
+	@When("Je clique sur le bouton Log in")
 	public void jeCliqueSurLeBoutonLogIn() {
 		LoginPage.getLoginBarMenu().click();
 	}
-
+	
 	@When("Je saisis une adresse mail")
 	public void jeSaisisUneAdresseMail() {
 		LoginPage.getEmailField().sendKeys(configFileReader.getProperty("home.email"));
@@ -38,6 +42,7 @@ public class LoginSteps {
 	@When("Je clique sur le bouton Login")
 	public void jeCliqueSurLeBoutonLogin() {
 		LoginPage.getLoginButton().click();
+
 	}
 
 	@Then("Je me redirige vers la page home {string}")
@@ -46,5 +51,23 @@ public class LoginSteps {
 		Assertions.assertEquals(homePage, email);
 		
 	}
+
+	@When("Je saisis une adresse mail {string}")
+	public void jeSaisisUneAdresseMail(String string) {
+	   actionsUtils.writeText(LoginPage.getEmailField(), string);
+	}
+	
+	@When("Je saisis un mot de passe {string}")
+	public void jeSaisisUnMotDePasse(String string) {
+	   actionsUtils.writeText(LoginPage.getPasswordField(), string);  
+	}
+	
+	@Then("Je visualise le message d'erreur {string}")
+	public void jeVisualiseLeMessageDErreur(String string) {
+	   validations.assertEquals(LoginPage.getErrorMessage(), string);
+	}
+
+
+
 
 }
