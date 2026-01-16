@@ -45,8 +45,10 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: '**/target/*.html', fingerprint: true
-            junit '**/target/surefire-reports/*.xml'
+			// Publier les rapports Cucumber
+            cucumber buildStatus: 'UNSTABLE', fileIncludePattern: '**/target/cucumber-reports/*.json'
+            //archiveArtifacts artifacts: '**/target/*.html', fingerprint: true
+            //junit '**/target/surefire-reports/*.xml'
         }
         failure {
             echo '❌ Pipeline échoué'
