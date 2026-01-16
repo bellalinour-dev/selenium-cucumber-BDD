@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven-3.9.12'     // nom du Maven configuré dans Jenkins
-        jdk 'JDK21'             // nom du JDK configuré dans Jenkins
+        maven 'Maven-3.9.12'
+        jdk 'JDK21'
     }
 
     environment {
@@ -32,23 +32,26 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'mvn test'
+                // Génère le JSON report pour Cucumber
+                bat 'mvn test -Dcucumber.plugin="json:target/cucumber-report.json"'
             }
         }
 
         stage('Cucumber Report') {
             steps {
-                bat 'mvn verify'
+                // Utilise le plugin Cucumber Jenkins pour générer le HTML à partir du JSON
+                cucumber(
+                    jsonReportDirectory: 'target',
+                    fileIncludePattern: 'cucumber-report.json'
+                )
             }
         }
     }
 
     post {
         always {
-			// Publier les rapports Cucumber
-            cucumber buildStatus: 'UNSTABLE', fileIncludePattern: '**/target/cucumber-reports/*.json'
-            //archiveArtifacts artifacts: '**/target/*.html', fingerprint: true
-            //junit '**/target/surefire-reports/*.xml'
+            archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+            junit '**/target/surefire-reports/*.xml'
         }
         failure {
             echo '❌ Pipeline échoué'
