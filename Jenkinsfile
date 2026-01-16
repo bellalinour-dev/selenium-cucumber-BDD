@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven-3.9.6'     // nom du Maven configuré dans Jenkins
-        jdk 'JDK17'             // nom du JDK configuré dans Jenkins
+        maven 'Maven-3.9.12'     // nom du Maven configuré dans Jenkins
+        jdk 'JDK21'             // nom du JDK configuré dans Jenkins
     }
 
     environment {
@@ -14,7 +14,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/TON_COMPTE/TON_REPO.git'
+                git branch: 'main', url: 'https://github.com/bellalinour-dev/selenium-cucumber-BDD.git'
             }
         }
 
