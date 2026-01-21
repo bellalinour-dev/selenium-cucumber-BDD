@@ -47,12 +47,12 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
          * Glue code location (step definitions).
          * Uncomment and adjust this path if step definitions are not auto-detected.
          */
-        // glue = {"src/test/java/com/e2eTest/automation/step_definitions"},
-
+         //glue = {"com.e2eTest.automation.step_definitions",},
+         
         /**
          * Executes only scenarios or features with the specified tag.
          */
-        tags = ("@logout"),
+        tags = ("@notebooks"),
 
         /**
          * Removes unnecessary characters from the console output,

@@ -1,8 +1,14 @@
 C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\page_objects\LoginPage.java
 C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\page_objects\LogoutPage.java
+C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\page_objects\NewsletterPage.java
+C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\page_objects\NotebookPage.java
+C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\page_objects\WishlistPage.java
 C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\RunWebsuitTest.java
 C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\step_definitions\LoginSteps.java
 C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\step_definitions\LogoutSteps.java
+C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\step_definitions\NewsletterSteps.java
+C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\step_definitions\NotebookSteps.java
+C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\step_definitions\WishlistSteps.java
 C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\utils\ActionsUtils.java
 C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\utils\BasePage.java
 C:\Users\bella\eclipse-workspace\Selenium_cucumber\src\test\java\com\e2eTest\automation\utils\ConfigFileReader.java
