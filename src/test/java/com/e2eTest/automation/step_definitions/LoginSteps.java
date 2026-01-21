@@ -45,5 +45,26 @@ public class LoginSteps {
 	public void jeMeRedirigeVersLaPageHome(String email) {
 		validations.assertEquals(LoginPage.getHomePage(), email);
 	}
+	
+
+	@When("Je saisis une adresse mail {string}")
+	public void jeSaisisUneAdresseMail(String email) {
+		actionsUtils.writeText(LoginPage.getEmailField(), email);
+	}
+	
+	@When("Je saisis un mot de passe {string}")
+	public void jeSaisisUnMotDePasse(String password) {
+		actionsUtils.writeText(LoginPage.getPasswordField(), password);
+	}
+	
+	@Then("Je visualise le message d'erreur {string}")
+	public void jeVisualiseLeMessageDErreur(String error_message) throws InterruptedException {
+		
+		validations.assertEquals(LoginPage.getErrorMessage(), error_message);
+	   
+	}
+
+
+
 
 }
