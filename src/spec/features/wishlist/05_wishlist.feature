@@ -1,5 +1,5 @@
 #langage: EN
-@wishlists @tr
+@wishlist @tr
 Feature: Je Souhaite Tester La Page wishlist de l'application Web Demo Shop
 
 Background:
@@ -9,8 +9,8 @@ And  Je saisis une adresse mail
 And Je saisis un mot de passe
 And Je clique sur le bouton Login
 
-@wishlists
+@wishlist
 Scenario: Je Souhaite Tester La Page wishlists vide pour un utilisateur donné 
 
 And Je clique sur le bouton wishlist
-Then le message suivant doit apparaitre Message1 "The wishlist is empty!"
+Then le message Wishlist suivant doit apparaitre Message1 "The wishlist is empty!"

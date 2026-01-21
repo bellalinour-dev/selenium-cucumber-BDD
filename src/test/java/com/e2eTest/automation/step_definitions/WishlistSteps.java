@@ -26,7 +26,7 @@ public class WishlistSteps {
 
 
 	@Then("le message Wishlist suivant doit apparaitre Message1 {string}")
-	public void leMessageWishlistSuivantDoitApparaitre(String Message1) {
+	public void leMessageWishlistSuivantDoitApparaitreMessage1(String Message1) {
 		validations.assertEquals(WishlistPage.getWishlistVideResult(), Message1);
 	}
 
