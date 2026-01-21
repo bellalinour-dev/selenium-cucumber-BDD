@@ -18,4 +18,4 @@ Scenario: Je Souhaite Tester la souscription aux newsletter
 
 When Je saisis une adresse mail invalide mail "noor.com"
 And  clique sur Subscribe
-Then le message suivant doit apparaitre Message1 "Enter valid email"
+Then le message Newsletter suivant doit apparaitre Message1 "Enter valid email"

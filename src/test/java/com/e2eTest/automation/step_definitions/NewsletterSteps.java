@@ -1,6 +1,8 @@
 package com.e2eTest.automation.step_definitions;
 
 
+import org.openqa.selenium.WebElement;
+
 import com.e2eTest.automation.page_objects.NewsletterPage;
 import com.e2eTest.automation.utils.ActionsUtils;
 import com.e2eTest.automation.utils.ConfigFileReader;
@@ -32,10 +34,10 @@ public class NewsletterSteps {
 	@Then("le message suivant doit apparaitre Message {string}")
 	public void leMessageSuivantDoitApparaitre(String Message) throws InterruptedException {
 		Thread.sleep(3000);
-		String rrrrrrrrrrrrrrrr = NewsletterPage.getSubsribeResult().getText();
-		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA " + rrrrrrrrrrrrrrrr);
-		validations.assertEquals(NewsletterPage.getSubsribeResult(), Message);
-
+		validations.assertEquals(
+			    NewsletterPage.getSubsribeResult(),
+			    Message
+			);
 	}
 
 	@When("Je saisis une adresse mail invalide mail {string}")
@@ -45,12 +47,14 @@ public class NewsletterSteps {
 	}
 
 	@Then("le message Newsletter suivant doit apparaitre Message1 {string}")
-	public void leMessageNewsletterSuivantDoitApparaitreMessage(String Message1) throws InterruptedException {
-		Thread.sleep(3000);
-		String xxxxx = NewsletterPage.geterrorMessage().getText();
-		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA " + xxxxx);
-		validations.assertEquals(NewsletterPage.geterrorMessage(), Message1);
+	public void leMessageNewsletterSuivantDoitApparaitreMessage1(String Message1) throws InterruptedException {
+		 WebElement message = waitUtils.waitForElementToBeVisible(
+			        NewsletterPage.getSubsribeResult(),
+			        5
+			    );
+
+			    validations.assertEquals(message, Message1);
+			}
 
 	}
 
-}
